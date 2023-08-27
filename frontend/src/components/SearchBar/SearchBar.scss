@@ -1,0 +1,47 @@
+.SearchBar {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+
+    form {
+        width: 80%;  // Making the form wider
+        display: flex;
+        justify-content: space-between;
+
+        input {
+            flex: 3;
+            padding: 15px 20px;  // Increase padding for a bigger input box
+            border-radius: 25px;  // Rounder edges
+            border: 2px solid #ccc;
+            font-size: 18px;  // Slightly larger font
+            outline: none;
+            &:focus {
+                border-color: #007BFF;
+            }
+        }
+
+        button {
+            flex: 1;
+            margin-left: 10px;
+            padding: 15px 25px;  // Increase padding for a bigger button
+            background-color: #28a745;  // Green color
+            color: #fff;
+            border: none;
+            border-radius: 50px;  // Fully rounded button
+            cursor: pointer;
+            font-size: 18px;  // Bigger font
+            transition: background-color 0.3s, transform 0.3s;
+            outline: none;
+
+            &:hover {
+                background-color: #218838;  // Darker green on hover
+                transform: scale(1.05);  // Slight scaling effect for a "pop" feel on hover
+            }
+
+            &:active {
+                background-color: #1e7e34;  // Even darker green on click
+                transform: scale(0.95);  // Slight scaling effect on click
+            }
+        }
+    }
+}
