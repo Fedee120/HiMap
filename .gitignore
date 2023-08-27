@@ -1,0 +1,9 @@
+/data
+/Small
+/Small-Processed
+python-3.11.4-docs-text.zip
+__pycache__
+db/volumes
+backend/node-backend/node_modules/
+embedding_data.json
+sentence_data.json
