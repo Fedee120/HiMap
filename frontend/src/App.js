@@ -12,7 +12,8 @@ function App() {
     const handleSearch = async (query) => {
         try {
             const response = await Axios.post(`http://localhost:80/api/query`, { text: query });
-            setResults(response.data.sentences);
+            setResults(response.data);
+            console.log(response.data);
         } catch (error) {
             console.error("Error fetching search results", error);
         }

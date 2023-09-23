@@ -1,16 +1,41 @@
 .SearchResults {
-    max-width: 800px;
-    margin: 40px auto;
+    display: flex;
 
-    div {
-        margin-bottom: 20px;
-        padding: 15px;
-        border-radius: 5px;
-        background-color: #f7f7f7;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding-top: 20px;
 
-        &:last-child {
-            margin-bottom: 0;
+    .file-list {
+        width: 40%;
+        border-right: 1px solid #e1e1e1;
+    }
+
+    .file-name {
+        padding: 10px;
+        cursor: pointer;
+        &:hover {
+            background-color: #f1f1f1;
         }
+
+        &.selected {
+            background-color: #e1e1e1;
+        }
+    }
+
+    .sentence-previews {
+        span {
+            margin-right: 5px;
+        }
+    }
+
+    .file-details {
+        width: 60%;
+        padding-left: 20px;
+    }
+
+    .result {
+        margin-bottom: 10px;
+        //add a box arround and padding and shadow
+        border: 1px solid #e1e1e1;
+        padding: 10px;
+        box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
     }
 }

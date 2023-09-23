@@ -26,7 +26,7 @@ router.post('/embeddings', async (req, res) => {
 
 router.post('/query', async (req, res) => {
     try {
-        const collectionName = "python_doc";
+        const collectionName = "python_docV2";
 
 
         const { text } = req.body;
@@ -51,16 +51,17 @@ router.post('/query', async (req, res) => {
             params: { nprobe: 64 }, // optional, specify the search parameters
             limit: 10, // optional, specify the number of nearest neighbors to return
             metric_type: 'L2', // optional, metric to calculate similarity of two vectors
+            output_fields: ['filename', 'sentence', 'id'] 
           });
 
         // get the actual ids of the documents
-        const retrieveResponse = await axios.post('http://document-retrieval-service:8001/retrieve', { ids: result.results.map((result) => result.id) });
+        //const retrieveResponse = await axios.post('http://document-retrieval-service:8001/retrieve', { ids: result.results.map((result) => result.id) });
 
         // get the actual ids of the documents
         //const retrieveResponse = await axios.post('http://document-retrieval-service:8001/retrieve', { ids: result });
           
         // Return the search results
-        res.send(retrieveResponse.data)
+        res.send(result.results)
     } catch (error) {
         res.status(500).json({ message: 'An error occurred', error: error.message });
     }
