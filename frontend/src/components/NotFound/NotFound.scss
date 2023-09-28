@@ -1,0 +1,43 @@
+.Container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 100px;
+}
+
+.Bear{
+    width: 232px;
+    height: 232px;
+    flex-shrink: 0;
+}
+.Not-results{
+    display: flex;
+    width: 687px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #000;
+    text-align: center;
+    font-family: Inter;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: normal;
+}
+
+.Second-not-results{
+    display: flex;
+    width: 656px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #7B7777;
+    text-align: center;
+    font-family: Inter;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: normal;
+}

@@ -12,15 +12,15 @@ function SearchBar({ onSearch }) {
 
     return (
         <div className="SearchBar">
-            <form className="SearchBar" onSubmit={handleSubmit}>
+            <form className="SearchBar">
                 <input 
                     className='search-input'
                     type="text" 
                     value={query} 
                     onChange={(e) => setQuery(e.target.value)}
                     placeholder="Enter your search query..." 
-                />
-                <SearchIcon className='search-icon'/>
+                /> 
+                <SearchIcon className='search-icon' onClick={handleSubmit}/> 
                 {/* <button type="submit" className='search-button'>Search</button> */}
 
             </form>
