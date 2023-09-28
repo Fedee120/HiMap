@@ -1,7 +1,9 @@
 .SearchBar {
     display: flex;
     justify-content: center;
-    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    position: relative;
 
     form {
         width: 80%;  // Making the form wider
@@ -9,6 +11,7 @@
         justify-content: space-between;
 
         input {
+            background: #FFF;
             flex: 3;
             padding: 15px 20px;  // Increase padding for a bigger input box
             border-radius: 25px;  // Rounder edges
@@ -44,4 +47,10 @@
             }
         }
     }
+
+    .search-icon {
+        position: absolute;
+        right: 10px; /* Ajusta la posición del icono a la derecha según tus preferencias */
+        cursor: pointer;
+      }
 }

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
+import SearchIcon from '@mui/icons-material/Search';
 import './SearchBar.scss';
-
 
 function SearchBar({ onSearch }) {
     const [query, setQuery] = useState('');
@@ -20,7 +20,9 @@ function SearchBar({ onSearch }) {
                     onChange={(e) => setQuery(e.target.value)}
                     placeholder="Enter your search query..." 
                 />
-                <button type="submit" className='search-button'>Search</button>
+                <SearchIcon className='search-icon'/>
+                {/* <button type="submit" className='search-button'>Search</button> */}
+
             </form>
         </div>
     );    
