@@ -22,7 +22,7 @@ function App() {
     return (
         <div className="App">
             <SearchBar onSearch={handleSearch} />
-            <SearchResults results={results} />
+            <SearchResults results={results.data} />
         </div>
     );
 }

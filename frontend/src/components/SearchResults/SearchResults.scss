@@ -1,41 +1,33 @@
 .SearchResults {
     display: flex;
-
+    flex-direction: column;
+    align-items: center;
     padding-top: 20px;
+}
 
-    .file-list {
-        width: 40%;
-        border-right: 1px solid #e1e1e1;
-    }
+.file-list {
+    width: calc(100% - 40px); /* Usar todo el ancho disponible, restando el espacio del margen */
+    max-width: 800px;
+    margin: 20px 20px 0 20px; /* Aplicar margen solo en la parte superior y los costados */
+}
 
-    .file-name {
-        padding: 10px;
-        cursor: pointer;
-        &:hover {
-            background-color: #f1f1f1;
-        }
+.file-item {
+    width: 100%;
+    margin: 10px;
+    cursor: pointer;
+    background-color: #fff;
+    border: 1px solid #e1e1e1;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
 
-        &.selected {
-            background-color: #e1e1e1;
-        }
-    }
+.file-item:hover {
+    background-color: #f1f1f1;
+}
 
-    .sentence-previews {
-        span {
-            margin-right: 5px;
-        }
-    }
-
-    .file-details {
-        width: 60%;
-        padding-left: 20px;
-    }
-
-    .result {
-        margin-bottom: 10px;
-        //add a box arround and padding and shadow
-        border: 1px solid #e1e1e1;
-        padding: 10px;
-        box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
-    }
+.file-content {
+    padding: 10px;
+    text-align: left;
 }

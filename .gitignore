@@ -7,3 +7,5 @@ db/volumes
 backend/node-backend/node_modules/
 embedding_data.json
 sentence_data.json
+split_files/
+db.zip
