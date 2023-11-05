@@ -10,7 +10,11 @@ function App() {
 
     const handleSearch = async (query) => {
         try {
-            const response = await Axios.post(`http://localhost:80/api/query`, { text: query });
+            const response = await Axios.post(`http://localhost:80/api/query`, { text: query,
+                                                                                "ef": 60,  // optional, default is 40
+                                                                                "limit": 4,  // optional, default is 10
+                                                                                "metric_type": "L2"  // optional, default is 'L2'
+                                                                                })
             setResults(response.data.data);
             setStatistics(response.data.timings);
             console.log(response.data);

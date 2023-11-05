@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './SearchResults.scss';
 
 function SearchResults({ results }) {
-    const [selectedId, setSelectedId] = useState(null);
-
     // Verificar si 'results' es un arreglo
     if (!Array.isArray(results)) {
         return (
@@ -13,29 +11,18 @@ function SearchResults({ results }) {
         );
     }
 
-    const groupedResults = results.reduce((acc, result) => {
-        if (!acc[result.id]) acc[result.id] = [];
-        acc[result.id].push(result);
-        return acc;
-    }, {});
+    // Ordenamos los resultados por score de forma ascendente
+    const sortedResults = results.sort((a, b) => a.score - b.score);
 
     return (
         <div className="SearchResults">
             <div className="file-list">
-                {Object.keys(groupedResults).map((id, index) => (
-                    <div
-                        key={index}
-                        className={`file-item ${selectedId === id ? 'selected' : ''}`}
-                        onClick={() => setSelectedId(id)}
-                    >
+                {sortedResults.map((result, index) => (
+                    <div key={index} className="file-item">
                         <div className="file-content">
-                            {groupedResults[id].map((result, idx) => (
-                                <div className="result" key={idx}>
-                                    <p><strong>ID:</strong> {result.id}</p>
-                                    <p><strong>Score:</strong> {result.score}</p>
-                                    <p><strong>Sentence:</strong> {result.sentence}</p>
-                                </div>
-                            ))}
+                            <p><strong>ID:</strong> {result.id}</p>
+                            <p><strong>Score:</strong> {result.score}</p>
+                            <p><strong>Sentence:</strong> {result.sentence}</p>
                         </div>
                     </div>
                 ))}
